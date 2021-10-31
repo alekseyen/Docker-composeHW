@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="ab757c58-2996-484c-8a50-1d71c16bd39b" name="tpos-server">
+        <fileTransfer rootFolder="/home/tpos2021/tpo2021203" accessType="SFTP" host="environ01.atp-fivt.org" port="22" sshConfigId="ae53fb63-cba3-46e0-bac8-e9ecb2aec3f7" sshConfig="tpo2021203@environ01.atp-fivt.org:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
