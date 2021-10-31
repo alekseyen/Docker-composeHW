@@ -39,7 +39,3 @@ services:
 networks:
   net:
     driver: bridge
-
-## TODO:
-# argparses to bd_filler/main.py to pass correct PATH to csv
-#
