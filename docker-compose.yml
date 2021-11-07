@@ -1,15 +1,20 @@
 version: '3.5'
+
+x-args: &default-args
+  args:
+    POSTGRES_USER: admin
+    POSTGRES_PASSWORD: admin
+    POSTGRES_HOST: localhost
+    POSTGRES_PORT: 5432
+    POSTGRES_DB: example
+    TABLE_NAME: cats
+
 services:
   postgres:
     container_name: postgres
     build:
       context: './databases'
-      args:
-        POSTGRES_USER: admin
-        POSTGRES_PASSWORD: admin
-        POSTGRES_HOST: localhost
-        POSTGRES_PORT: 5432
-        POSTGRES_DB: example
+      <<: *default-args
     ports:
       - "5432:5432"
     networks:
@@ -33,6 +38,7 @@ services:
   web:
     build:
       context: './web'
+      <<: *default-args
     depends_on:
       - postgres
       - bd_filler
