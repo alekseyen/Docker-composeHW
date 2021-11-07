@@ -4,10 +4,12 @@ services:
     container_name: postgres
     build:
       context: './databases'
-    environment:
-      - POSTGRES_USER=admin
-      - POSTGRES_PASSWORD=admin
-      - POSTGRES_DB=example
+      args:
+        POSTGRES_USER: admin
+        POSTGRES_PASSWORD: admin
+        POSTGRES_HOST: localhost
+        POSTGRES_PORT: 5432
+        POSTGRES_DB: example
     ports:
       - "5432:5432"
     networks:
@@ -16,9 +18,12 @@ services:
   bd_filler:
     build:
       context: './bd_filling'
+      args:
+        DATABASE_CONNECTION_URL: "postgresql+psycopg2://admin:admin@postgres:5432/example"
+        # host = postgres is necessarly
     container_name: bd_filler
     command: >
-      bash -c "python main.py"
+      bash -c "sleep 3 && python main.py"
     volumes:
       - ./data:/data
     depends_on:

@@ -1,12 +1,25 @@
 FROM postgres:latest
 
 # для заполнения даткой сразу при старте БД
-#COPY *.sql /docker-entrypoint-initdb.d/
-#ADD create_tables.sql /docker-entrypoint-initdb.d
-#RUN chmod a+r /docker-entrypoint-initdb.d/*
+# COPY *.sql /docker-entrypoint-initdb.d/
+# ADD create_tables.sql /docker-entrypoint-initdb.d
+# RUN chmod a+r /docker-entrypoint-initdb.d/*
 
-ENV POSTGRES_USER admin
-ENV POSTGRES_PASSWORD admin
-ENV POSTGRES_HOST localhost
-ENV POSTGRES_PORT 5432
-ENV POSTGRES_DB example
+#ENV POSTGRES_USER admin
+#ENV POSTGRES_PASSWORD admin
+#ENV POSTGRES_HOST localhost
+#ENV POSTGRES_PORT 5432
+#ENV POSTGRES_DB example
+
+ARG POSTGRES_USER
+ARG POSTGRES_PASSWORD
+ARG POSTGRES_HOST
+ARG POSTGRES_PORT
+ARG POSTGRES_DB
+
+
+ENV POSTGRES_USER=${POSTGRES_USER}
+ENV POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+ENV POSTGRES_HOST=${POSTGRES_HOST}
+ENV POSTGRES_PORT=${POSTGRES_PORT}
+ENV POSTGRES_DB=${POSTGRES_DB}
