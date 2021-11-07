@@ -1,5 +1,4 @@
 # Как запустить
-
 Запускаем сервисы:
 ```bash
 docker-compose up --build && docker-compose rm -fsv
@@ -21,3 +20,5 @@ todo
 или достаточно запустить
 
 `docker-compose down -v`
+
+репа: https://gitlab2.atp-fivt.org/tpos2021/podkidysheval-hwdocker

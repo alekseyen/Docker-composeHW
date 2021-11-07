@@ -11,16 +11,6 @@ cursor = conn.cursor()
 # cursor.execute('SELECT * FROM cats LIMIT 10')
 # records = cursor.fetchall()
 
-
-cursor.execute("""
-    CREATE TABLE IF NOT EXISTS cats (
-    name text,
-    price int,
-    breed text);
-""")
-
-conn.commit()
-
 data_to_record = pd.read_csv('../data/cats.csv', delimiter=';')
 
 with open('data/cats.csv', 'r') as f:
