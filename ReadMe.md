@@ -18,15 +18,3 @@ docker-compose up --build
 > docker-compose down --volumes
 
 P.S На всякий случай выкидываю ошибку в сервисе bd_filling если происходит запись в уже существующую таблицу
-
-# Комментарии
-
-1) Для того чтобы контейнеры удалились после того как отработали запускаем: 
-
-`&& docker-compose rm -fsv`
-
-или достаточно запустить
-
-`docker-compose down -v`
-
-репа: https://gitlab2.atp-fivt.org/tpos2021/podkidysheval-hwdocker
