@@ -20,10 +20,10 @@ services:
       context: './bd_filling'
       args:
         DATABASE_CONNECTION_URL: "postgresql+psycopg2://admin:admin@postgres:5432/example"
-        # host = postgres is necessarly
+        # host = postgres is necessarly !
     container_name: bd_filler
     command: >
-      bash -c "sleep 3 && python main.py"
+      bash -c "sleep 5 && python main.py"
     volumes:
       - ./data:/data
     depends_on:
