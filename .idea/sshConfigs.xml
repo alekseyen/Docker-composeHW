@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="SshConfigs">
-    <configs>
-      <sshConfig authType="PASSWORD" host="environ01.atp-fivt.org" id="ae53fb63-cba3-46e0-bac8-e9ecb2aec3f7" port="22" nameFormat="DESCRIPTIVE" username="tpo2021203" />
-    </configs>
-  </component>
-</project>
